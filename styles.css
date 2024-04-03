@@ -1,30 +1,26 @@
 body,
 html {
+  margin: 0;
   font-family: "Inter", sans-serif;
 }
 
 header {
-  border: 1px solid red;
   height: 152px;
 }
 
 section {
-  border: 1px solid purple;
   height: 340px;
 }
 main {
-  border: 1px solid blue;
   height: auto;
 }
 footer {
-  border: 1px solid #009145; /* Hexadecimal color code*/
   min-height: 368px;
 }
 
 .container {
-  width: 1220px;
+  width: 100%;
   margin: 0 auto;
-  border: 1px solid springgreen;
   height: inherit;
   min-height: inherit;
 }
@@ -46,7 +42,7 @@ footer {
 .product-card {
   background-color: #f0f0f0;
   border-radius: 14px;
-  width:auto;
+  width: auto;
   overflow: hidden;
   line-height: 22px;
 }
@@ -87,21 +83,213 @@ footer {
   color: #428f13;
 }
 
-.product-container{
+.product-container {
+
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
 
-@media(max-width:576px){
-  .product-container{
-    grid-template-columns: repeat(2, 1fr);
-  }
+
+/* Hero section  */
+
+#hero {
+  height: 340px;
+  background: url("../assets/hero_bg.png");
+  background-size: cover;
+  background-position: top center;
 }
 
-@media(min-width:577px) and (max-width:992px){
-  .product-container{
-    grid-template-columns: repeat(3, 1fr);
+#hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title-container span {
+  display: block;
+  color: white;
+  font-weight: 700;
+}
+
+.title-container span:first-child {
+  font-size: 2.5rem;
+}
+
+.title-container span:last-child {
+  font-size: 6.25rem;
+  line-height: 5rem;
+}
+
+/* End Hero section */
+
+
+/* Header */
+
+header {
+  background-color: #ff3b3c; 
+}
+
+.search {
+  padding: 10px;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.search .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search .social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search .form {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.search .form input {
+  height: 62px;
+  border-radius: 14px;
+  border: none;
+  width: 505px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.search .social ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search .social ul li {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  padding: 10px 0;
+}
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav ul li a {
+  color: white;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+}
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* End Header */
+
+
+
+/* vista telefono */
+@media (max-width: 576px) {
+
+  header {
+    height: 350px;
+  }
+
+  .nav{
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav ul{
+    display: grid;
+    gap: 5px;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .title-container span:first-child {
+    font-size: 1.5rem;
+  }
+
+  .title-container span:last-child {
+    font-size: 3.25rem;
+    line-height: 5rem;
+  }
+
+  .search{
+    display: grid;
+    gap: 20px;
+    padding-top: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .search .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search .form {
+    width: 100%;
+  }
+
+  .search .form input {
+    width: 250px;
+  }
+
+  .search .social ul{
+    justify-content: center;
+  }
+
+}
+
+/* Vista tablet */
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title-container span:first-child {
+    font-size: 2rem;
+  }
+
+  .title-container span:last-child {
+    font-size: 4.25rem;
+    line-height: 5rem;
+  }
+
+  .search .form input {
+    width: 280px;
+  }
+
+  .search .form input {
+    width: 300px;
+  }
+
+  .search .social ul{
+    justify-content: center;
   }
 
 }
