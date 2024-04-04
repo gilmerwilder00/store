@@ -14,10 +14,10 @@ section {
 main {
   height: auto;
 }
-footer {
-  min-height: 368px;
-}
 
+
+
+/* Main section */
 .container {
   width: 100%;
   margin: 0 auto;
@@ -84,13 +84,13 @@ footer {
 }
 
 .product-container {
-
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
 
+/* End Main section */
 
 /* Hero section  */
 
@@ -204,6 +204,58 @@ header {
 }
 
 /* End Header */
+
+/* Footer */
+
+footer {
+  min-height: 368px;
+  background-color: #7525A7;
+  margin-top: 50px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.columns-container .col{
+  margin: 5px;
+}
+
+.columns-container .col ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.columns-container .col ul li {
+  padding: 5px 0;
+}
+
+.columns-container .col ul li.col-main-item {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.columns-container .col ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.copyright {
+  border-top: 1px solid #ba53fb;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 30px 0;
+  box-sizing: border-box;
+}
 
 
 
