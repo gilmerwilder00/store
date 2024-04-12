@@ -4,12 +4,11 @@ html {
   font-family: "Inter", sans-serif;
 }
 
-
 /* Header */
 
 header {
   height: 152px;
-  background-color: #ff3b3c; 
+  background-color: #ff3b3c;
 }
 
 .search {
@@ -22,13 +21,13 @@ header {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.search .logo{
+.search .logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.search .social{
+.search .social {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +83,6 @@ header {
   text-decoration: underline;
 }
 
-
 /* Hero section */
 
 section {
@@ -121,8 +119,6 @@ section {
 
 /* End Hero section */
 
-
-
 /* Main section */
 
 main {
@@ -158,8 +154,8 @@ main {
   line-height: 22px;
 }
 
-.product-card a{
-   text-decoration: none; 
+.product-card a {
+  text-decoration: none;
 }
 
 .product-info {
@@ -198,20 +194,22 @@ main {
   color: #428f13;
 }
 
-.product-container {
-  padding: 20px;
+.product-container{
+  padding: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
 
-
+.product-container a{
+  text-decoration: none;
+  color: initial;
+}
 
 /* Footer */
 
 footer {
-  min-height: 368px;
-  background-color: #7525A7;
+  background-color: #7525a7;
   margin-top: 50px;
 }
 
@@ -227,7 +225,7 @@ footer .container {
   flex-wrap: wrap;
 }
 
-.columns-container .col{
+.columns-container .col {
   margin: 5px;
 }
 
@@ -260,21 +258,20 @@ footer .container {
 }
 
 
-
 /* vista telefono */
 @media (max-width: 576px) {
-
   header {
-    height: 350px;
+    height: 250px;
   }
 
-  .nav{
+  .nav {
     display: flex;
     justify-content: center;
   }
 
-  .nav ul{
-    display: grid;
+  .nav ul {
+    /* display: grid; */
+    display: None;
     gap: 5px;
   }
 
@@ -291,7 +288,7 @@ footer .container {
     line-height: 5rem;
   }
 
-  .search{
+  .search {
     display: grid;
     gap: 20px;
     padding-top: 20px;
@@ -312,13 +309,10 @@ footer .container {
     width: 250px;
   }
 
-  .search .social ul{
+  .search .social ul {
     justify-content: center;
   }
-
 }
-
-
 
 /* Vista tablet */
 @media (min-width: 577px) and (max-width: 992px) {
@@ -343,8 +337,7 @@ footer .container {
     width: 300px;
   }
 
-  .search .social ul{
+  .search .social ul {
     justify-content: center;
   }
-
 }
