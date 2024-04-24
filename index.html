@@ -14,6 +14,7 @@
   <body>
     <header>
       <div class="container">
+
         <div class="search">
           <div class="logo">
             <a class="logo" href="./index.html">
@@ -27,7 +28,12 @@
 
           <div class="form">
             <form>
-              <input type="text" placeholder="Search" />
+
+
+              <!-- <input type="text" placeholder="Search" onkeyup="captureText()" /> -->
+              <input  id="search"  type="text" placeholder="Search" />
+
+
             </form>
           </div>
 
@@ -40,14 +46,15 @@
         </div>
 
         <div class="nav">
-          <ul>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Cómo comprar</a></li>
-            <li><a href="#">Costos y tarifas</a></li>
-            <li><a href="#">Mis pedidos</a></li>
-            <li><a href="#">Garantía</a></li>
+          <ul id="nav"  >
+            <!-- <li><a href="./ofertas.html">Ofertas</a></li>
+            <li><a href="./como-comprar.html">Cómo comprar</a></li>
+            <li><a href="./costos.html">Costos y tarifas</a></li>
+            <li><a href="./pedidos.html">Mis pedidos</a></li>
+            <li><a href="./garantia.html">Garantía</a></li> -->
           </ul>
         </div>
+
       </div>
     </header>
 
@@ -62,8 +69,9 @@
 
     <main>
       <div class="container">
-        <div class="product-container">
-          <article class="product-card">
+        <div class="product-container" id="products">
+
+<!-- <article class="product-card" >
             <a class="product-card" href="./details.html">
               <img
                 class="product-img"
@@ -208,32 +216,50 @@
                 </div>
               </div>
             </a>
-          </article>
+          </article> -->
+
+          
         </div>
       </div>
     </main>
 
     <footer>
       <div class="container">
-        <div class="columns-container">
-          <div class="col">
+
+        <div class="columns-container" id="footer">
+
+        <!-- <div class="col">
+
             <ul>
+
               <li class="col-main-item">
                 <a href="#">Ofertas de la semana</a>
               </li>
+
+
               <li><a href="#">Laptops</a></li>
               <li><a href="#">Audio</a></li>
               <li><a href="#">Auticulares</a></li>
+              
             </ul>
-          </div>
-          <div class="col">
+
+          </div> 
+
+
+           <div class="col">
             <ul>
+
+
               <li class="col-main-item"><a href="#">Cómo comprar</a></li>
+
+
               <li><a href="#">Formas de pago</a></li>
               <li><a href="#">Envios</a></li>
               <li><a href="#">Devoluciones</a></li>
             </ul>
           </div>
+
+
           <div class="col">
             <ul>
               <li class="col-main-item"><a href="#">Costos y tarifas</a></li>
@@ -241,6 +267,7 @@
               <li><a href="#">Facturación</a></li>
             </ul>
           </div>
+
           <div class="col">
             <ul>
               <li class="col-main-item"><a href="#">Mis pedidos</a></li>
@@ -248,15 +275,26 @@
               <li><a href="#">Lista de deseos</a></li>
             </ul>
           </div>
+
+
           <div class="col">
             <ul>
               <li class="col-main-item"><a href="#">Garantía de Entrega</a></li>
             </ul>
-          </div>
+          </div> -->
+
         </div>
 
         <div class="copyright">&copy; Curso de HTML + CSS 2024</div>
       </div>
     </footer>
+
+
+
+    <script src="./scripts/layout.js" ></script>
+    <script src="./scripts/products.js" ></script>
+    <script src="./scripts/productCards.js" ></script>
+    <script src="./scripts/filterProducts.js"></script>
+
   </body>
 </html>
