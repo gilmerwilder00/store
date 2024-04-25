@@ -13,7 +13,7 @@ function captureText(event){
  let valorCapturado = event.srcElement.value; 
  
  filteredProducts = products.filter( product => {
-    let resultado = product.title.includes(valorCapturado);
+    let resultado = product.name.includes(valorCapturado);
     // console.log(resultado);
     return resultado;
  }

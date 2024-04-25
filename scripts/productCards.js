@@ -149,15 +149,17 @@ const productsSelector = document.getElementById("products");
 // `;
 
 function createCard(product) {
+
+  // <a class="product-card" href="./details.html?id=${product.id}"></a>
   return `<article class="product-card">
-            <a class="product-card" href="${product.img}">
+            <a class="product-card" href="./details.html?id=${product.id}">
               <img
                 class="product-img"
-                src="assets/mock1.jpg"
-                alt="${product.title}"
+                src="${product.img}"
+                alt="${product.name}"
               />
               <div class="product-info">
-                <span class="product-title">${product.title}</span>
+                <span class="product-title">${product.name}</span>
                 <span class="product-description">${product.description}</span>
                 <div class="product-price-block">
                   <span class="price">${product.price}</span>
