@@ -1,29 +1,32 @@
-
 // console.log(location);
 const query = location.search;
 // console.log(query);
 const params = new URLSearchParams(query);
-const id = params.get('id');
+const id = params.get("id");
 console.log(id);
 
-
 function printDetails(id) {
-    const product = products.find((each) => each.id === id);
+  const product = products.find((each) => each.id === id);
 
-    const detailsTemplate = `
+  // console.log(product);
+// onclick="changeMini(event)"
+
+  const detailsTemplate = `
     <div class="columns-container">
           
           <!-- bloque de imágenes -->
+
           <div class="product-images-block">
-
-            ${product.images.map(each => 
-                ` <div class="thumbnail-container">
-                    <img  src="${each}" alt="Mackbok" /> 
+            ${product.images
+              .map(
+                (each) =>
+                  `<div class="thumbnail-container">
+                    <img  class="imgMini1"  src="${each}" alt="Mackbok"  onclick="changeMini(event)"/> 
                   </div>`
-            
-            ).join("")}
+              )
+              .join("")}
 
-            <img class="main-image" src="../assets/mock1.jpg" alt="Macbok 1" />
+            <img class="main-image" id="bigImg" src="../assets/mock1.jpg" alt="Macbok 1" />
             
           </div>
 
@@ -36,7 +39,9 @@ function printDetails(id) {
                 <label class="label" for="color">Color</label>
 
                 <select type="text" placeholder="Selecciona un color">
-                ${product.colors.map((each) => `<option value=${each}>${each}</option>`).join("")}
+                ${product.colors
+                  .map((each) => `<option value=${each}>${each}</option>`)
+                  .join("")}
                 </select>
 
               </fieldset>
@@ -81,9 +86,12 @@ function printDetails(id) {
 
             <div class="checkout-process">
               <div class="top">
-                <input type="number" value="1" />
+                <input type="number" value="1"  onchange = "changeSubtotal(event)"   />
                 <button class="btn-primary">Comprar</button>
               </div>
+              
+              <div id="subtotalComprar"></div>
+                  
               <div class="bottom">
                 <button class="btn-outline">Añadir al Carrito</button>
               </div>
@@ -163,8 +171,43 @@ function printDetails(id) {
        
     `;
 
-    const detailsSelector = document.querySelector("#details");
-    detailsSelector.innerHTML = detailsTemplate;
- }
+  const detailsSelector = document.querySelector("#details");
+  detailsSelector.innerHTML = detailsTemplate;
+}
 
- printDetails(id);
+
+function changeMini(event) {
+  const selectedSrc = event.target.src;
+  // console.log(event)
+  console.log(selectedSrc)
+  const bigSelector = document.querySelector("#bigImg");
+  console.log(bigSelector);
+  bigSelector.src = selectedSrc;
+}
+
+function changeSubtotal(event){
+
+  const cantProd = event.target.value;
+  // console.log(event.target);
+  // console.log(cantProd);
+
+  const product = products.find((each) => each.id === id);
+
+  // console.log(product);
+
+  const subtotal = Number(product.price) * Number(cantProd);
+
+  const showSubtotal = document.getElementById("subtotalComprar");
+
+  // const value = `<p>${subtotal}</p>`
+
+  // console.log(subtotal);
+  // console.log(showSubtotal);
+  // showSubtotal.innerHTML(value); 
+  showSubtotal.innerText = subtotal; 
+  // console.log(showSubtotal);
+
+}
+
+
+printDetails(id);

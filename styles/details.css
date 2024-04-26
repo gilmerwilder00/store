@@ -456,6 +456,16 @@ footer .columns-container {
   box-sizing: border-box;
 }
 
+
+#subtotalComprar{
+  padding: 10px;
+  color: #c72525;
+  font-size: 30px;
+}
+
+
+
+
 /* vista telefono */
 @media (max-width: 576px) {
   header {
