@@ -3,13 +3,14 @@ const query = location.search;
 // console.log(query);
 const params = new URLSearchParams(query);
 const id = params.get("id");
-console.log(id);
+
+// console.log(id);
 
 function printDetails(id) {
   const product = products.find((each) => each.id === id);
 
   // console.log(product);
-// onclick="changeMini(event)"
+  // onclick="changeMini(event)"
 
   const detailsTemplate = `
     <div class="columns-container">
@@ -38,9 +39,11 @@ function printDetails(id) {
               <fieldset>
                 <label class="label" for="color">Color</label>
 
-                <select type="text" placeholder="Selecciona un color">
+                <select type="text"  id="color-${
+                  product.id
+                }"  placeholder="Selecciona un color">
                 ${product.colors
-                  .map((each) => `<option value=${each}>${each}</option>`)
+                  .map((each) => `<option   value=${each}>${each}</option>`)
                   .join("")}
                 </select>
 
@@ -86,14 +89,20 @@ function printDetails(id) {
 
             <div class="checkout-process">
               <div class="top">
-                <input type="number" value="1"  onchange = "changeSubtotal(event)"   />
+                <input  id="quantity-${
+                  product.id
+                }"  type="number" value="1"  onchange = "changeSubtotal(event)"   />
                 <button class="btn-primary">Comprar</button>
               </div>
               
               <div id="subtotalComprar"></div>
                   
               <div class="bottom">
-                <button class="btn-outline">Añadir al Carrito</button>
+                <button class="btn-outline"  onclick = "saveProduct('${
+                  product.id
+                }')">
+                  Añadir al Carrito
+                </button>
               </div>
             </div>
           </div>
@@ -175,18 +184,16 @@ function printDetails(id) {
   detailsSelector.innerHTML = detailsTemplate;
 }
 
-
 function changeMini(event) {
   const selectedSrc = event.target.src;
   // console.log(event)
-  console.log(selectedSrc)
+  // console.log(selectedSrc);
   const bigSelector = document.querySelector("#bigImg");
-  console.log(bigSelector);
+  // console.log(bigSelector);
   bigSelector.src = selectedSrc;
 }
 
-function changeSubtotal(event){
-
+function changeSubtotal(event) {
   const cantProd = event.target.value;
   // console.log(event.target);
   // console.log(cantProd);
@@ -203,11 +210,67 @@ function changeSubtotal(event){
 
   // console.log(subtotal);
   // console.log(showSubtotal);
-  // showSubtotal.innerHTML(value); 
-  showSubtotal.innerText = subtotal; 
+  // showSubtotal.innerHTML(value);
+  showSubtotal.innerText = subtotal;
   // console.log(showSubtotal);
-
 }
 
+function saveProduct(id) {
+  // console.log(id);
+  const found = products.find((each) => each.id === id);
+  // console.log(found);
+  // console.log("#color-" + id);
+
+  // const color1 = document.querySelector("#color-" + id).value;
+  // console.log(color1);
+
+  //const quantity1 = document.querySelector("#quantity-" + id).value;
+  //console.log(quantity1);
+
+  const product = {
+    id: id,
+    // title: found.title,
+    title: found.name,
+    price: found.price,
+    image: found.images[0],
+    color: document.querySelector("#color-" + id).value,
+    quantity: Number(document.querySelector("#quantity-" + id).value),
+  };
+
+  // const stringifyProduct = JSON.stringify(product);
+
+  // localStorage.setItem("cart", stringifyProduct);
+
+  //cart definition 
+  const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
+
+  console.log(cart);
+  
+  // const existingProduct = cart.some(  (productCard) =>  productCard.id === product.id && productCard.color === product.color);
+  // console.log(existingProduct);
+
+  //If exits a product with the same id  
+  if (cart.some((productCart) => productCart.id === id && productCart.color === product.color )) {
+
+    console.log("Product with same id an color already un chart");
+
+    const sameProduct = cart.find((productCart) => productCart.id === id && productCart.color === product.color);
+
+    // console.log(sameProduct);
+    // console.log(sameProduct.quantity);
+
+    sameProduct.quantity += Number(product.quantity);
+
+  // It's a product with a different ID  or same ID but different color 
+  } else {
+    cart.push(product);
+  }
+
+  // propagation
+  // let productsList = [...cart];
+  // console.log("Card: ");
+  // console.log(cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 printDetails(id);
