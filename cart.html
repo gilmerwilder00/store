@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda virtual</title>
+
+    <link rel="stylesheet" href="./styles/cart.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css..." />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="search">
+          <div class="logo">
+            <a class="logo" href="./index.html">
+              <img
+                src="../assets/tiendamia-logo.svg"
+                width="218"
+                alt="Logo store"
+              />
+            </a>
+          </div>
+
+          <div class="form">
+            <form>
+              <input id="search" type="text" placeholder="Search" />
+            </form>
+          </div>
+
+          <div class="social">
+            <ul>
+              <li><img src="./assets/facebook.png" alt="facebook" /></li>
+              <li><img src="./assets/instagram.png" alt="instagram" /></li>
+              <li id="cart" class="header-li">
+                <a class="header-a" href="./cart.html">
+                  <img
+                    class="header-social-img"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA81JREFUaEPtml2ITVEUx/9/UsjDiDFJHpQ8iAfNNCFfSV4YKUUzJOHVw0QKTT4ilDJ58UBpkq/yIIM3GV9NE0Z58aCRfGZGyseDByx3ZV/dtn3vuedjnzNz792vZ++11m//V3vts84hqmywynhRA650xWsK1xSusB2opXSFCfofTk1h3RIRkRGu9ACAXSSv2RxOhSsAWDl/A6gj+a0QupKBlXMayffVAjxEcko1pfQFkpvKAnYdWCJSD+ADgNHW8+Uk72R1yImIxvMVwHgrho0kL0YGNqf3DQCrLCPnSG7NEHgZAHvDtcpMJPklLvAGAJctI98B1JP8kQW0iBwHsNvy3UdyviueUBcPERkLYAjABMtYK0l7I1LhF5FnAOZazvaTPBQb2KT1WQDbLGO3SNqp7h3YnCuDDkfNuXgeJQW8FECPZewXgKkkVf3UhojoxqsAhUNjaCDpvC2GSmmjsK55o0XdctROsjM12r9X4KsA1lk+z5PcXCyO0MAG+giAvZbRfpKNaQGXKEdtJC8lDTwDwEuH0dkkn6cBLSKLAdyzfBUtR/l5kRQ2Kuuh0GQ5PEZyT0rArizrJbmwlP84wDsAnLKMvwMwvdiBkeRGiEg/gHmWzQ6Sh30B1wH4lMVVs0Q5aiL5xAuwSetuAKstBw8A3E5STYetWQBa7XLkejuy10ZOaQO8HsAVz3Dlmu8iuSVoclzgMQA+O66aQX59PF9BMjCzYgEblc8A2O6DIITN+ySXlDM/CWB1dLccZ57maMNuQbnX2tjARuXXWo4soMcAbnqCzJv9SPJ0GB9JAWvt22c5HiA5M0wwacxNCrjYVTOwLqYBWegjEWCT1n0Ami2AzlybpT1tKG8Xj0LDIuK6av4E0EhSuxLDYiSp8KRceXoLQNtA9tDu4QsPxD0k7WZESTeJAZu0PgFgpwewYiYPkjwQxl/SwJMBaIkaFyaIGHOzBTYqrwSgX+3SgM4e2EBr2/Soo2kfQ0zn0uEBnA8t12SbY3rG2vCze9lJwGd7aCVB4NtGooeW72CTsO8dWEROAmgDoCd4b65Oa6NPP8oFjjhrixn3Ciwi1wG0OJy3BEHHWVtqJ70Bi4j2urTn5RoPSS4qFlictUFp4xO4A4DzC57+cELS/rD+L1YRibw2S2DXy0Q+nsHci3tDCYUjr80SWDsgr3Iqj3IEUfK1UUQir80M2Ny49KeSLgu6m+SaoMBEJPLaTA6tgtuWqrVWfxID8DTodC4M1igdaW0mZSlIxSyeezuls4Apx2cNuJxdGslzagqPZPXKib3qFP4DPc5DTOx+iUAAAAAASUVORK5CYII="
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav">
+          <ul id="nav"></ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <div class="cart-container">
+
+          <div id="cart-list-products">
+
+            <!-- <article class="cart-product-item">
+              <img
+                class="product-cart-img"
+                src="assets/mock1.jpg"
+                alt="Macbook Pro"
+              />
+
+              <div class="product-cart-description">
+                <span class="product-cart-title"
+                  >Apple iPhone XR, 64 GB, Black - Fully Unloked
+                  (Refurbished)</span
+                >
+                <span class="product-cart-description">Space Gray</span>
+                <input
+                  class="product-cart-quantity"
+                  type="text"
+                  value="1"
+                  disabled
+                />
+              </div>
+
+              <div class="">$750.000</div>
+            </article> -->
+
+           
+          </div>
+
+          <div id="order-summary">
+            <div class="card-summary">
+              <div id="title-summary">
+                <h2>Resumen del pedido</h2>
+              </div>
+              <div id="subtotal-summary">
+                <h3>Subtotal</h3>
+                <p>$152,400.00</p>
+              </div>
+              <div id="taxes">
+                <p>Ingluye impuestos PAIS y percención AFIP</p>
+                <button class="btn-primary" id="buy-buttom" type="button">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="columns-container" id="footer"></div>
+
+        <div class="copyright">&copy; Curso de HTML + CSS 2024</div>
+      </div>
+    </footer>
+
+    <script src="./scripts/layout.js"></script>
+    <!-- <script src="./scripts/products.js"></script> -->
+    <!-- <script src="./scripts/productCards.js"></script> -->
+    <!-- <script src="./scripts/filterProducts.js"></script> -->
+    <script src="./scripts/chart.js"></script>
+  </body>
+</html>
