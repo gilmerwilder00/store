@@ -83,6 +83,10 @@ header {
   text-decoration: underline;
 }
 
+.header-social-img {
+  height: 30px;
+}
+
 /* Main section */
 
 main {

@@ -88,6 +88,42 @@ header {
 }
 
 
+/*  Hero section */ 
+
+section {
+  height: 340px;
+}
+
+#hero {
+  height: 340px;
+  background: url("../assets/hero_bg.png");
+  background-size: cover;
+  background-position: top center;
+}
+
+#hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title-container span {
+  display: block;
+  color: white;
+  font-weight: 700;
+}
+
+.title-container span:first-child {
+  font-size: 2.5rem;
+}
+
+.title-container span:last-child {
+  font-size: 6.25rem;
+  line-height: 5rem;
+}
+
+/* End Hero section */
+
 
 /* Main section */
 
@@ -102,38 +138,38 @@ main {
   min-height: inherit;
 }
 
-.cart-container{
+.cart-container {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-gap: 20px;
   padding: 30px;
 }
 
-.cart-product-item{
+.cart-product-item {
   padding: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
-.product-cart-img{
+.product-cart-img {
   border-radius: 5px;
 }
 
-.product-cart-title{
+.product-cart-title {
   font-weight: bold;
-  margin-bottom: 10px ; 
+  margin-bottom: 10px;
 }
 
-.product-cart-description{
+.product-cart-description {
   display: block;
   margin-bottom: 10px;
 }
 
-.product-cart-quantity{
+.product-cart-quantity {
   height: 25px;
   border-radius: 10px;
   border: none;
@@ -143,14 +179,13 @@ main {
   background-color: white;
 }
 
-
-#order-summary{
-  background-color: #F1F1F1;
+#order-summary {
+  background-color: #f1f1f1;
   padding: 20px;
 }
 
 .btn-primary {
-  width: 100% ;
+  width: 100%;
   background: #ff3b3c;
   color: white;
   font-weight: bold;
@@ -159,20 +194,14 @@ main {
   border-radius: 10px;
 }
 
-
-
-.cart-product-item .product-cart-img{
+.cart-product-item .product-cart-img {
   max-height: 80px;
+}
 
-} 
-
-
-
-
-
-
-
-
+.total-p {
+  color: #ff3b3c;
+  font-weight: bolder;
+}
 
 /* Footer */
 
@@ -224,7 +253,6 @@ footer .container {
   padding: 30px 0;
   box-sizing: border-box;
 }
-
 
 /* vista telefono */
 @media (max-width: 576px) {
