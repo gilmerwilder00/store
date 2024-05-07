@@ -250,16 +250,17 @@ function saveProduct(id) {
   // console.log(existingProduct);
 
   //If exits a product with the same id  
-  if (cart.some((productCart) => productCart.id === id && productCart.color === product.color )) {
+  if (cart.some((productCart) => productCart.id === id  )) {
 
     console.log("Product with same id an color already un chart");
 
-    const sameProduct = cart.find((productCart) => productCart.id === id && productCart.color === product.color);
+    const sameProduct = cart.find((productCart) => productCart.id === id );
 
     // console.log(sameProduct);
     // console.log(sameProduct.quantity);
 
     sameProduct.quantity += Number(product.quantity);
+    // sameProduct.quantity = sameProduct.quantity +  Number(product.quantity);
 
   // It's a product with a different ID  or same ID but different color 
   } else {

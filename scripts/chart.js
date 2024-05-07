@@ -28,6 +28,9 @@ function createProductCard(product) {
     </div>
 
     <div class="">$ ${product.price}</div>
+    <button  class="add-favorites-button" type="button" onclick ="addFavorite('${product.id}')" >
+      Agregar a favoritos 
+    </button>
   </article>
     
     `;
@@ -78,12 +81,21 @@ printProducts(cartProducts, "cart-list-products");
 
 calculateTotal();
 
+
+
+
 function changeQuantity(event) {
   // Get the ID of the actual product
-  const actualProductId = event.target.id;
+  // console.log(event.target);
 
+  const actualProductId = event.target.id;
+  // console.log(actualProductId); 
+  
   // Get the new quantity
   const newQuantity = Number(event.target.value);
+  // console.log(newQuantity);
+
+  // console.log(cartProducts);
 
   // Find the product in the array cartProducts
   const actualProduct = cartProducts.find(
@@ -93,11 +105,17 @@ function changeQuantity(event) {
   // Update the new quantity
   actualProduct.quantity = newQuantity;
 
+  // console.log(cartProducts);
+
   // console.log(JSON.stringify(cartProducts));
 
   // Update local Storage
-  localStorage.setItem("cart", JSON.stringify(cartProducts));
+   localStorage.setItem("cart", JSON.stringify(cartProducts));
 
   // Update total
   calculateTotal();
 }
+
+
+
+
